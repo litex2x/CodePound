@@ -23,7 +23,7 @@ namespace CodePound.Utility.MediaPacker
             }
         }
 
-        public string[] FindBestSet(long max, float threshold)
+        public string[] FindBestSet(long max, float threshold, bool CheckAllCombinations = false)
         {
             int maxCombinations = (int)Math.Pow(2, Entities.Length) - 1;
             string bestCombination = string.Empty;
@@ -31,10 +31,16 @@ namespace CodePound.Utility.MediaPacker
             double bestCombinationSize = 0;
             double currentSize = 0;
             List<string> package = new List<string>();
+            List<int> skip = new List<int>();
 
             //  go through each combination
             for (int combination = 1; combination <= maxCombinations; combination++)
             {
+                if (IsSkip(combination, skip))
+                {
+                    continue;
+                }
+
                 currentSize = 0;
                 currentBinaryCombination = Convert.ToString(combination, 2);
 
@@ -45,6 +51,13 @@ namespace CodePound.Utility.MediaPacker
                     {
                         currentSize += Entities[currentBinaryCombination.Length - 1 - index].Size;
                     }
+
+                    if (currentSize > max)
+                    {
+                        skip.Add(combination);
+
+                        break;
+                    }
                 }
 
                 //  Remember the best combination size that is within threshold range
@@ -54,6 +67,11 @@ namespace CodePound.Utility.MediaPacker
                 {
                     bestCombination = currentBinaryCombination;
                     bestCombinationSize = currentSize;
+
+                    if (!CheckAllCombinations)
+                    {
+                        break;
+                    }
                 }
             }
 
@@ -67,6 +85,19 @@ namespace CodePound.Utility.MediaPacker
             }
 
             return package.ToArray();
+        }
+
+        private bool IsSkip(int number, List<int> skip)
+        {
+            foreach (int item in skip)
+            {
+                if ((number & item) == item)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
