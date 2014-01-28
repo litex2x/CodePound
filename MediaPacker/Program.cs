@@ -18,7 +18,7 @@ namespace CodePound.Utility.MediaPacker
             MediaMover mover = null;
             MediaAnalyzer analyzer = null;
 
-            if (args.Length < 4)
+            if (args.Length != 4)
             {
                 Console.WriteLine("Missing argument(s).");
                 Console.WriteLine("mp <input path> <output path> <size> <threshold>");
