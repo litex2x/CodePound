@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MediaPacker.Tests
+namespace CodePound.MediaPacker.UnitTests
 {
     public class Helper
     {

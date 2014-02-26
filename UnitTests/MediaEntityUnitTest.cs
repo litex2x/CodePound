@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
-using CodePound.Utility.MediaPacker;
+using CodePound.MediaPacker.ConsoleApplication;
 
-namespace MediaPacker.Tests
+namespace CodePound.MediaPacker.UnitTests
 {
     [TestClass]
     public class MediaEntityUnitTest

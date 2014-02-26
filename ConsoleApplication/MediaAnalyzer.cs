@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace CodePound.Utility.MediaPacker
+namespace CodePound.MediaPacker.ConsoleApplication
 {
     public class MediaAnalyzer
     {

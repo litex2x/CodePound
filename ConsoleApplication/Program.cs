@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodePound.Utility.MediaPacker
+namespace CodePound.MediaPacker.ConsoleApplication
 {
     class Program
     {
