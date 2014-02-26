@@ -6,8 +6,8 @@
     <ProjectGuid>{4B7C1A43-BB2B-4519-BE17-6007D49BF2EF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MediaPacker.Tests</RootNamespace>
-    <AssemblyName>MediaPacker.Tests</AssemblyName>
+    <RootNamespace>CodePound.MediaPacker.UnitTests</RootNamespace>
+    <AssemblyName>UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -57,9 +57,9 @@
     <Compile Include="MediaMoverUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MediaPacker\MediaPacker.csproj">
+    <ProjectReference Include="..\ConsoleApplication\ConsoleApplication.csproj">
       <Project>{a958bcc1-e63d-4739-9933-525630e6a8c2}</Project>
-      <Name>MediaPacker</Name>
+      <Name>ConsoleApplication</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
